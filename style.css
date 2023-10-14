@@ -1,0 +1,31 @@
+body{
+    background-image: url("img/1303456.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#card1{
+    background-color: #940B92 !important;
+}
+
+#card2{
+    background-color: #610C9F !important;
+}
+
+#btn{
+    background-color: #5272F2 !important;
+}
+
+#text{
+    color: #ffffff !important;
+}
+
+#klikdisini{
+    color: #00ff2f !important;
+}
+
+.form-control:focus{
+    box-shadow: #f176d0 !important;
+}
