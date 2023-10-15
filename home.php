@@ -24,7 +24,7 @@ while($row = mysqli_fetch_assoc($result))
 <body>
     <nav class="navbar">
         <div class="container">
-            <a href="" class="navbar-brand text-white">RENTAL POWER GAMES</a>
+            <a class="navbar-brand text-white">RENTAL POWER GAMES</a>
             <ul class="navbar-nav">
                 <li class="nav-item">
                 <div class="container-logout">
@@ -49,4 +49,8 @@ while($row = mysqli_fetch_assoc($result))
     </nav>
     <h3 class="text-center text-white">Selamat Datang <?= $rentalps['fullname']; ?></h3>
     </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </html>

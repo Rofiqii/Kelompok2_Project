@@ -1,7 +1,7 @@
 <?php
 require 'koneksi.php';
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['lupa_password'])) {
     $username = mysqli_real_escape_string($koneksi, $_POST['username']);
     $pertanyaan = mysqli_real_escape_string($koneksi, $_POST['pertanyaan']);
     $jawaban = mysqli_real_escape_string($koneksi, $_POST['jawaban']);
@@ -36,12 +36,14 @@ if (isset($_POST['submit'])) {
     <title>Lupa Password</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <div class="row justify-content-center pt-4">
         <div class="col-md-4">
-            <div class="card text-white" id="card1">
-                <div class="card-header text-center" id="card2">
+            <div class="card text-white shadow-lg" style="background: transparent; 
+            backdrop-filter: blur(15px); border: border-style: solid; border-color: rgb(255, 255, 255);">
+                <div class="card-header text-center" style="border: border-style: solid; border-color: rgb(255, 255, 255);">
                     <h5 class="text-light">Lupa Password</h5>
                     </div>
                     <div class="card-body">
@@ -50,11 +52,13 @@ if (isset($_POST['submit'])) {
                                 <div class="alert alert-danger"><?= $error; ?></div>
                             <?php endif; ?>
                             <div class="mb-3">
-                                <label for="username">Username :</label>
+                                <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                                <label for="username">Username</label>
                                 <input type="text" name="username" id="username" class="form-control" placeholder="Username" required>
                             </div>
                             <div class="mb-3">
-                                <label for="pertanyaan">Pertanyaan :</label>
+                                <span class="icon"><ion-icon name="help-circle-outline"></ion-icon></span>
+                                <label for="pertanyaan">Pertanyaan</label>
                                 <select name="pertanyaan" id="pertanyaan" class="form-control" required>
                                     <option>Pilih Pertanyaan</option>
                                     <option value="Apa warna favoritmu?">Apa warna favoritmu?</option>
@@ -65,12 +69,13 @@ if (isset($_POST['submit'])) {
                                 </select>
                             </div>
                             <div class="mb-3">
-                            <label for="jawaban">Jawaban :</label>
-                            <input type="text" name="jawaban" id="jawaban" class="form-control" placeholder="Jawaban" required>
+                                <span class="icon"><ion-icon name="checkmark-circle-outline"></ion-icon></span>
+                                <label for="jawaban">Jawaban</label>
+                                <input type="text" name="jawaban" id="jawaban" class="form-control" placeholder="Jawaban" required>
                             </div>
                             <br>
                             <div class="d-flex justify-content-center">
-                            <button type="submit" name="submit" class="btn btn-primary" id="btn">Submit</button>
+                                <button type="submit" name="lupa_password" class="btn btn-success">Submit</button>
                             </div>
                         </form>  
                 </div>
@@ -79,5 +84,9 @@ if (isset($_POST['submit'])) {
         <div class="text-center mt-3">
             <a href="login.php" id="klikdisini">Kembali ke login.</a>
         </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

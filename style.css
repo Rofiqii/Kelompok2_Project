@@ -6,6 +6,10 @@ body{
     background-size: cover;
 }
 
+#palettedoang{
+    color: #de0fc9;
+}
+
 #card1{
     background-color: #940B92 !important;
 }
@@ -15,7 +19,7 @@ body{
 }
 
 #btn{
-    background-color: #5272F2 !important;
+    background-color: #c815e0 !important;
 }
 
 #text{
@@ -24,8 +28,4 @@ body{
 
 #klikdisini{
     color: #00ff2f !important;
-}
-
-.form-control:focus{
-    box-shadow: #f176d0 !important;
 }

@@ -2,7 +2,7 @@
 session_start();
 require 'koneksi.php';
 
-if(isset($_POST['submit'])) {
+if(isset($_POST['login'])) {
     $username = mysqli_real_escape_string($koneksi, $_POST['username']);
     $pass = mysqli_real_escape_string($koneksi, $_POST['password']);
 
@@ -38,29 +38,33 @@ if(isset($_POST['submit'])) {
     <title>Login</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <div class="row justify-content-center pt-4">
         <div class="col-md-4">
-            <div class="card text-white mt-4" id="card1">
-                <div class="card-header text-center" id="card2">
-                    <h5 class="text-light">Login</h5>
+            <div class="card mt-4 shadow-lg" style="background: transparent; 
+            backdrop-filter: blur(15px); border: border-style: solid; border-color: rgb(255, 255, 255);">
+                <div class="card-header text-center" style="border: border-style: solid; border-color: rgb(255, 255, 255);">
+                    <h5 class="text-light mb-3 mt-3">Login</h5>
                 </div>
                 <div class="card-body">
                     <form action="" method="post">
                         <?php if(isset($error)): ?>
                             <div class="alert alert-danger"><?= $error; ?></div>
                         <?php endif; ?>
-                        <div class="mb-3">
+                        <div class="mb-3 text-light">
+                            <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
                             <label for="username">Username</label>
                             <input type="username" name="username" id="username" class="form-control" placeholder="Username">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 text-light">
+                            <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
                             <label for="password">Password</label>
-                            <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Password" >
                         </div>
                         <div class="d-flex justify-content-center">
-                            <button type="submit" name="submit" class="btn btn-primary" id="btn">Login</button>
+                            <button type="submit" name="login" class="btn btn-success">Login</button>
                         </div>
                     </form>
                 </div>
@@ -72,5 +76,7 @@ if(isset($_POST['submit'])) {
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

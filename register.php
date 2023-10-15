@@ -32,12 +32,14 @@ if(isset($_POST['register'])) {
     <title>Register</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <div class="row justify-content-center pt-4">
         <div class="col-md-4">
-            <div class="card text-white" id="card1">
-                <div class="card-header text-center" id="card2">
+            <div class="card text-white shadow-lg" style="background: transparent; 
+            backdrop-filter: blur(15px); border: border-style: solid; border-color: rgb(255, 255, 255);">
+                <div class="card-header text-center" style="border: border-style: solid; border-color: rgb(255, 255, 255);">
                     <h5 class="text-light">Register</h5>
                 </div>
                 <div class="card-body">
@@ -46,22 +48,27 @@ if(isset($_POST['register'])) {
                             <div class="alert alert-danger"><?= $error; ?></div>
                         <?php endif; ?>
                         <div class="mb-3">
+                            <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
                             <label for="username">Username</label>
                             <input type="text" name="username" id="username" class="form-control" placeholder="Username" required>
                         </div>
                         <div class="mb-3">
+                            <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
                             <label for="fullname">Nama Lengkap</label>
                             <input type="text" name="fullname" id="fullname" class="form-control" placeholder="Nama Lengkap" required>
                         </div>
                         <div class="mb-3">
+                            <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
                             <label for="password">Password</label>
                             <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
                         </div>
                         <div class="mb-3">
+                            <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
                             <label for="password2">Konfirmasi Password</label>
                             <input type="password" name="password2" id="password2" class="form-control" placeholder="Konfirmasi Password" required>
                         </div>
                         <div class="mb-3">
+                            <span class="icon"><ion-icon name="help-circle-outline"></ion-icon></span>
                             <label for="pertanyaan">Pertanyaan :</label>
                             <br>
                             <select name="pertanyaan" id="pertanyaan" class="form-control">
@@ -74,12 +81,13 @@ if(isset($_POST['register'])) {
                             </select>
                         </div>
                         <div class="mb-3">
+                            <span class="icon"><ion-icon name="checkmark-circle-outline"></ion-icon></span>
                             <label for="jawaban">Jawaban</label>
                             <input type="text" name="jawaban" id="jawaban" class="form-control" placeholder="Jawaban" required>
                         </div>
                             <br>
                         <div class="text-center">
-                            <button type="submit" name="register" class="btn btn-primary" id="btn">Register</button>
+                            <button type="submit" name="register" class="btn btn-success">Register</button>
                         </div>
                     </form>
                 </div>
@@ -91,5 +99,7 @@ if(isset($_POST['register'])) {
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
