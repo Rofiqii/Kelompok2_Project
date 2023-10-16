@@ -2,17 +2,22 @@
 
 require 'koneksi.php';
 
-if(isset($_POST['register'])) {
+if (isset($_POST['register'])) {
     $username = mysqli_real_escape_string($koneksi, $_POST['username']);
     $name = mysqli_real_escape_string($koneksi, $_POST['fullname']);
     $pass = mysqli_real_escape_string($koneksi, $_POST['password']);
     $pass2 = mysqli_real_escape_string($koneksi, $_POST['password2']);
     $question = mysqli_real_escape_string($koneksi, $_POST['pertanyaan']);
     $answer = mysqli_real_escape_string($koneksi, $_POST['jawaban']);
-    if ($pass === $pass2) {
+    $check_query = "SELECT * FROM user WHERE username = '$username'";
+    $check_result = mysqli_query($koneksi, $check_query);
+    if (mysqli_num_rows($check_result) > 0) {
+        $error = "Username sudah digunakan. Silakan gunakan username lain.";
+    } elseif ($pass === $pass2) {
         $query = "INSERT INTO user (`username`, `fullname`, `password`, `pertanyaan`, `jawaban`)
             VALUES ('$username', '$name', '$pass', '$question', '$answer')";
         $result = mysqli_query($koneksi, $query);
+        
         if ($result) {
             header('Location: login.php');
         } else {

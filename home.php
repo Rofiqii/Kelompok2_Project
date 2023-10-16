@@ -1,15 +1,11 @@
 <?php
-
 session_start();
 require 'koneksi.php';
 
 $rentalps = $_SESSION['rentalps'];
-$name = [];
-
 $result = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '{$rentalps}'");
-
 while($row = mysqli_fetch_assoc($result))
-    $name[] = $row;
+$name = $row['fullname'];
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +43,7 @@ while($row = mysqli_fetch_assoc($result))
             </ul>
         </div>
     </nav>
-    <h3 class="text-center text-white">Selamat Datang <?= $rentalps['fullname']; ?></h3>
+    <h3 class="text-center text-white">Selamat Datang <?$rentalps['fullname'];?></h3>
     </body>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
