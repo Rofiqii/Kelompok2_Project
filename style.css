@@ -1,5 +1,5 @@
 body{
-    background-image: url("img/1303456.jpg");
+    background-image: url("img/11133.jpg");
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -7,7 +7,7 @@ body{
 }
 
 #palettedoang{
-    color: #de0fc9;
+    color: #08cbe9;
 }
 
 #form{
@@ -18,22 +18,14 @@ body{
     border-style: solid; border-color: rgb(255, 255, 255);
 }
 
-#card1{
-    background-color: #940B92 !important;
-}
-
-#card2{
-    background-color: #610C9F !important;
-}
-
 #btn{
-    background-color: #b811cb;
+    background-color: #4e175f;
 }
 
 #text{
-    color: #ffffff !important;
+    color: #ffffff;
 }
 
 #klikdisini{
-    color: #00ff2f !important;
+    color: #08cbe9;
 }

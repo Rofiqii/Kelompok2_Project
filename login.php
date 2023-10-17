@@ -60,7 +60,7 @@ if(isset($_POST['login'])) {
                         <div class="mb-3 text-light">
                             <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
                             <label for="password">Password</label>
-                            <input type="password" name="password" id="password" class="form-control" placeholder="Password" >
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Password">
                         </div>
                         <div class="d-flex justify-content-center">
                             <button type="submit" name="login" class="btn text-light" id="btn">Login</button>
