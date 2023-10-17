@@ -35,14 +35,13 @@ if (isset($_POST['lupa_password'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lupa Password</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?version=1">
 
 </head>
 <body>
     <div class="row justify-content-center pt-4">
         <div class="col-md-4">
-            <div class="card text-white shadow-lg" style="background: transparent; 
-            backdrop-filter: blur(15px); border: border-style: solid; border-color: rgb(255, 255, 255);">
+            <div class="card text-white shadow-lg" id="form">
                 <div class="card-header text-center" style="border: border-style: solid; border-color: rgb(255, 255, 255);">
                     <h5 class="text-light">Lupa Password</h5>
                     </div>
@@ -75,7 +74,7 @@ if (isset($_POST['lupa_password'])) {
                             </div>
                             <br>
                             <div class="d-flex justify-content-center">
-                                <button type="submit" name="lupa_password" class="btn btn-success">Submit</button>
+                                <button type="submit" name="lupa_password" class="btn text-light" id="btn">Submit</button>
                             </div>
                         </form>  
                 </div>

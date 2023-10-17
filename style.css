@@ -10,6 +10,14 @@ body{
     color: #de0fc9;
 }
 
+#form{
+    background: transparent !important; 
+    backdrop-filter: blur(15px) !important; 
+    border: solid !important; 
+    border-color: rgb(255, 255, 255) !important;
+    border-style: solid; border-color: rgb(255, 255, 255);
+}
+
 #card1{
     background-color: #940B92 !important;
 }
@@ -19,7 +27,7 @@ body{
 }
 
 #btn{
-    background-color: #c815e0 !important;
+    background-color: #b811cb;
 }
 
 #text{

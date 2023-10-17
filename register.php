@@ -36,18 +36,17 @@ if (isset($_POST['register'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?version=1">
 
 </head>
 <body>
     <div class="row justify-content-center pt-4">
         <div class="col-md-4">
-            <div class="card text-white shadow-lg" style="background: transparent; 
-            backdrop-filter: blur(15px); border: border-style: solid; border-color: rgb(255, 255, 255);">
-                <div class="card-header text-center" style="border: border-style: solid; border-color: rgb(255, 255, 255);">
+            <div class="card" id="form">
+                <div class="card-header text-center" style="border border-style: solid; border-color: rgb(255, 255, 255);">
                     <h5 class="text-light">Register</h5>
                 </div>
-                <div class="card-body">
+                <div class="card-body text-light">
                     <form action="" method="post">
                         <?php if(isset($error)): ?>
                             <div class="alert alert-danger"><?= $error; ?></div>
@@ -92,7 +91,7 @@ if (isset($_POST['register'])) {
                         </div>
                             <br>
                         <div class="text-center">
-                            <button type="submit" name="register" class="btn btn-success">Register</button>
+                            <button type="submit" name="register" class="btn text-light" id="btn">Register</button>
                         </div>
                     </form>
                 </div>

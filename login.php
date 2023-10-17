@@ -37,14 +37,13 @@ if(isset($_POST['login'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?version=1">
 
 </head>
 <body>
     <div class="row justify-content-center pt-4">
         <div class="col-md-4">
-            <div class="card mt-4 shadow-lg" style="background: transparent; 
-            backdrop-filter: blur(15px); border: border-style: solid; border-color: rgb(255, 255, 255);">
+            <div class="card mt-4 shadow-lg" id="form">
                 <div class="card-header text-center" style="border: border-style: solid; border-color: rgb(255, 255, 255);">
                     <h5 class="text-light mb-3 mt-3">Login</h5>
                 </div>
@@ -64,7 +63,7 @@ if(isset($_POST['login'])) {
                             <input type="password" name="password" id="password" class="form-control" placeholder="Password" >
                         </div>
                         <div class="d-flex justify-content-center">
-                            <button type="submit" name="login" class="btn btn-success">Login</button>
+                            <button type="submit" name="login" class="btn text-light" id="btn">Login</button>
                         </div>
                     </form>
                 </div>
