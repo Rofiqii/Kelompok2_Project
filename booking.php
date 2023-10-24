@@ -43,7 +43,6 @@ $name = $row['fullname'];
             </ul>
         </div>
     </nav>
-    <h3 class="text-center text-white">Selamat Datang <?$rentalps['fullname'];?></h3>
     <a href="home.php" id="klikdisini" class="navbar-brand">Beranda</a>
     <br>
     <a href="detail_ps.php" id="klikdisini" class="navbar-brand">PlayStation</a>

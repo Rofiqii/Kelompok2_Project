@@ -1,9 +1,12 @@
 body{
-    background-image: url("img/11133.jpg");
-    height: 100vh;
+    background-image: url("assets/11133.jpg");
+    height: 120vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
 
 #palettedoang{
@@ -11,15 +14,14 @@ body{
 }
 
 #form{
-    background: transparent !important; 
-    backdrop-filter: blur(15px) !important; 
-    border: solid !important; 
-    border-color: rgb(255, 255, 255) !important;
-    border-style: solid; border-color: rgb(255, 255, 255);
+    background: transparent;
+    backdrop-filter: blur(15px);
+    border-color: rgb(255, 255, 255);
 }
 
 #btn{
-    background-color: #4e175f;
+    background-color: #d227a7;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 #text{
@@ -29,3 +31,59 @@ body{
 #klikdisini{
     color: #08cbe9;
 }
+
+.popup{
+    background-image: url("assets/11133.jpg");
+    width: 400px;
+    height: 70vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-style: solid;
+    border-radius: 6px;
+    border-color: #ffffff;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 10px 10px;
+    color: #ffffff;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#popupbtn{
+    width: 35%;
+    margin-top: 0px;
+    padding: 10px 0;
+    background: #d227a7;
+    color: #ffffff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup button{
+    width: 35%;
+    margin-top: 0px;
+    padding: 10px 0;
+    background: #4e175f;
+    color: #ffffff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
