@@ -33,12 +33,15 @@ if (isset($_POST['lupa_password'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lupa Password</title>
+    <title>Lupa Password - RENTAL POWER GAMES</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css?version=1">
 
 </head>
 <body>
+    <div class="card-header text-center">
+        <h1 class="text-light mt-3">RENTAL POWER GAMES</h1>
+    </div>
     <div class="row justify-content-center pt-4">
         <div class="col-md-4">
             <div class="card text-white shadow-lg" id="form">

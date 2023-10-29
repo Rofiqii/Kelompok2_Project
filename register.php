@@ -34,12 +34,15 @@ if (isset($_POST['register'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Register - RENTAL POWER GAMES</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css?version=1">
 
 </head>
 <body>
+    <div class="card-header text-center">
+        <h1 class="text-light mt-3">RENTAL POWER GAMES</h1>
+    </div>
     <div class="row justify-content-center pt-4">
         <div class="col-md-4">
             <div class="card" id="form">
@@ -65,6 +68,8 @@ if (isset($_POST['register'])) {
                             <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
                             <label for="password">Password</label>
                             <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+                            <label>Show Password</label>
+                            <input type="checkbox" name="" onclick="myFunction()">
                         </div>
                         <div class="mb-3">
                             <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
@@ -86,7 +91,7 @@ if (isset($_POST['register'])) {
                         </div>
                         <div class="mb-3">
                             <span class="icon"><ion-icon name="checkmark-circle-outline"></ion-icon></span>
-                            <label for="jawaban">Jawaban</label>
+                            <label for="jawaban">Jawaban (Perhatikan huruf kapitalnya)</label>
                             <input type="text" name="jawaban" id="jawaban" class="form-control" placeholder="Jawaban" required>
                         </div>
                             <br>
@@ -102,6 +107,16 @@ if (isset($_POST['register'])) {
         </div>
     </div>
 
+    <script type="text/javascript">
+        function myFunction() {
+            var show = document.getElementById('password');
+            if (show.type=='password'){
+                show.type='text';
+            }else{
+                show.type='password';
+            }
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

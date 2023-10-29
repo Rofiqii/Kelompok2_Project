@@ -27,12 +27,15 @@ if (isset($_POST['ganti_password'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ganti Password</title>
+    <title>Ganti Password - RENTAL POWER GAMES</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css?version=1">
 
 </head>
 <body>
+    <div class="card-header text-center">
+        <h1 class="text-light mt-3">RENTAL POWER GAMES</h1>
+    </div>
     <div class="row justify-content-center pt-4">
         <div class="col-md-4">
             <div class="card text-white shadow-lg" id="form">
@@ -53,6 +56,8 @@ if (isset($_POST['ganti_password'])) {
                             <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
                             <label for="new_password">Password Baru</label>
                             <input type="password" name="new_password" id="new_password" class="form-control" placeholder="Kata Sandi Baru" required>
+                            <label>Show Password</label>
+                            <input type="checkbox" name="" onclick="myFunction()">
                         </div>
                         <div class="mb-3">
                             <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
@@ -71,9 +76,19 @@ if (isset($_POST['ganti_password'])) {
             <a href="login.php" id="klikdisini">Kembali ke login.</a>
         </div>
     </div>
-    
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script type="text/javascript">
+        function myFunction() {
+            var show = document.getElementById('new_password');
+            if (show.type=='password'){
+                show.type='text';
+            }else{
+                show.type='password';
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
