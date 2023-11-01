@@ -34,13 +34,22 @@ if(isset($_POST['login'])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - RENTAL POWER GAMES</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css?version=1">
-
+    <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
+<body style="background-image: url(assets/112233.jpg);
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;">
     <div class="card-header text-center">
         <h1 class="text-light mt-3">RENTAL POWER GAMES</h1>
     </div>
@@ -88,6 +97,34 @@ if(isset($_POST['login'])) {
                 show.type='password';
             }
         }
+    </script>
+    <script>
+        const body = document.querySelector('body'),
+        sidebar = body.querySelector('nav'),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
+        if (localStorage.getItem("theme") === "dark") {
+        body.classList.add("dark");
+        modeText.innerText = "Light mode";
+        }
+        toggle.addEventListener("click" , () =>{
+            sidebar.classList.toggle("close");
+        })
+        searchBtn.addEventListener("click" , () =>{
+            sidebar.classList.remove("close");
+        })
+        modeSwitch.addEventListener("click" , () =>{
+            body.classList.toggle("dark");
+            if(body.classList.contains("dark")){
+                modeText.innerText = "Light mode";
+                localStorage.setItem("theme", "dark");
+            }else{
+                modeText.innerText = "Dark mode";
+                localStorage.setItem("theme", "light");
+            }
+        });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

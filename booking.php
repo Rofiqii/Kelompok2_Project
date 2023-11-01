@@ -1,7 +1,6 @@
 <?php
 session_start();
 require 'koneksi.php';
-
 $rentalps = $_SESSION['rentalps'];
 $result = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '{$rentalps}'");
 while($row = mysqli_fetch_assoc($result))
@@ -12,43 +11,121 @@ $name = $row['fullname'];
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking - RENTAL POWER GAMES</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css?version=1">
+    <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
+    <link rel="stylesheet" href="style.css">
+</head>
+
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <a class="navbar-brand text-white">RENTAL POWER GAMES</a>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                <div class="container-logout">
-                    <form action="logout.php">
-                    <a href="login.php" id="klikdisini" onclick="confirmLogout(event)">Logout</a>
-                        <div class="d-flex justify-content-center">
-                        </div>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                </span>
+                <div class="text logo-text">
+                    <span class="name">Rental</span>
+                    <span class="profession">Power Games</span>
+                </div>
+            </div>
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="home.php" id="klikdisini" class="navbar-brand">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="detail_ps.php">
+                            <i class='bx bx-joystick-alt icon'></i>
+                            <span class="text nav-text">PlayStation</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="booking.php">
+                            <i class='bx bxs-book-content icon'></i>
+                            <span class="text nav-text">Booking</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="lap_keuangan.php">
+                            <i class='bx bx-money-withdraw icon'></i>
+                            <span class="text nav-text">Laporan Keuangan</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <li class="" href="login.php" onclick="confirmLogout(event)">
+                    <a href="#">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Logout</span>
                         <script>
                         function confirmLogout(event) {
                             if (confirm('Yakin untuk logout?')) {
-                                window.location.href = 'login.php';
+                                window.location.href = 'logout.php';
                             } else {
                                 event.preventDefault();
                             }
                         }
                         </script>
-                    </form> 
-                </div>
+                    </a>
                 </li>
-            </ul>
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </div>
         </div>
     </nav>
-    <a href="home.php" id="klikdisini" class="navbar-brand">Beranda</a>
-    <br>
-    <a href="detail_ps.php" id="klikdisini" class="navbar-brand">PlayStation</a>
-    <br>
-    <a href="booking.php" id="klikdisini" class="navbar-brand">Booking</a>
-    </body>
+    <section class="home">
+        <div class="text" id="text">Selamat Datang User</div>
+    </section>
+    <script>
+        const body = document.querySelector('body'),
+        sidebar = body.querySelector('nav'),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
+        if (localStorage.getItem("theme") === "dark") {
+        body.classList.add("dark");
+        modeText.innerText = "Light mode";
+        }
+        toggle.addEventListener("click" , () =>{
+            sidebar.classList.toggle("close");
+        })
+        searchBtn.addEventListener("click" , () =>{
+            sidebar.classList.remove("close");
+        })
+        modeSwitch.addEventListener("click" , () =>{
+            body.classList.toggle("dark");
+            if(body.classList.contains("dark")){
+                modeText.innerText = "Light mode";
+                localStorage.setItem("theme", "dark");
+            }else{
+                modeText.innerText = "Dark mode";
+                localStorage.setItem("theme", "light");
+            }
+        });
+    </script>
+</body>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

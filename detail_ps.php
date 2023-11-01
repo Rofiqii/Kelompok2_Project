@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'koneksi.php';
 $sql = "SELECT id_ps, tipe_ps, harga FROM ps";
 $result = $koneksi->query($sql);
@@ -28,11 +29,14 @@ if (isset($_POST['submit'])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail PlayStation - RENTAL POWER GAMES</title>
+    <title>Detail PS - RENTAL POWER GAMES</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css?version=1">
+    <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="container">
@@ -47,7 +51,7 @@ if (isset($_POST['submit'])) {
                         <script>
                         function confirmLogout(event) {
                             if (confirm('Yakin untuk logout?')) {
-                                window.location.href = 'login.php';
+                                window.location.href = 'logout.php';
                             } else {
                                 event.preventDefault();
                             }

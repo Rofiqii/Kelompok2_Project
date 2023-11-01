@@ -1,7 +1,6 @@
 <?php
 session_start();
 require 'koneksi.php';
-
 $rentalps = $_SESSION['rentalps'];
 $result = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '{$rentalps}'");
 while($row = mysqli_fetch_assoc($result))
@@ -14,12 +13,11 @@ $name = $row['fullname'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - RENTAL POWER GAMES</title>
+    <title>Laporan Keuangan - RENTAL POWER GAMES</title>
     <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
     <link rel="stylesheet" href="style.css">
 </head>
 
-</head>
 <body>
     <nav class="sidebar close">
         <header>
@@ -41,8 +39,8 @@ $name = $row['fullname'];
                 </li>
                 <ul class="menu-links">
                 <li class="nav-link">
-                        <a href="home.php" id="klikdisini" class="navbar-brand">
-                            <i class='bx bx-home-alt icon' ></i>
+                        <a href="home.php">
+                            <i class='bx bx-home-alt icon'></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
                     </li>
