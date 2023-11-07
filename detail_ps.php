@@ -32,22 +32,66 @@ if (isset($_POST['submit'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail PS - RENTAL POWER GAMES</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
     <link rel="stylesheet" href="style.css">
 </head>
 
+</head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <a class="navbar-brand text-white">RENTAL POWER GAMES</a>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                <div class="container-logout">
-                    <form action="logout.php">
-                    <a href="login.php" id="klikdisini" onclick="confirmLogout(event)">Logout</a>
-                        <div class="d-flex justify-content-center">
-                        </div>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                </span>
+                <div class="text logo-text">
+                    <span class="name">Rental</span>
+                    <span class="profession">Power Games</span>
+                </div>
+            </div>
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="home.php" id="klikdisini" class="navbar-brand">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="detail_ps.php">
+                            <i class='bx bx-joystick-alt icon'></i>
+                            <span class="text nav-text">PlayStation</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="booking.php">
+                            <i class='bx bxs-book-content icon'></i>
+                            <span class="text nav-text">Booking</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="lap_keuangan.php">
+                            <i class='bx bx-money-withdraw icon'></i>
+                            <span class="text nav-text">Laporan Keuangan</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <li class="">
+                    <i class='bx bx-user-circle icon'></i>
+                    <span class="text logo-text profession">Nama Profile</span>
+                </li>
+                <li class="" href="login.php" onclick="confirmLogout(event)">
+                    <a href="#">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Logout</span>
                         <script>
                         function confirmLogout(event) {
                             if (confirm('Yakin untuk logout?')) {
@@ -57,19 +101,25 @@ if (isset($_POST['submit'])) {
                             }
                         }
                         </script>
-                    </form> 
-                </div>
+                    </a>
                 </li>
-            </ul>
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </div>
         </div>
     </nav>
-    <a href="home.php" id="klikdisini" class="navbar-brand">Beranda</a>
-    <br>
-    <a href="detail_ps.php" id="klikdisini" class="navbar-brand">PlayStation</a>
-    <br>
-    <a href="booking.php" id="klikdisini" class="navbar-brand">Booking</a>
-    <div>
-        <button type="submit" class="btn text-white" id="btn" onclick="openPopup()">Tambah</button>
+    <section class="home">
+        <h3 class="text logo-text">Detail Playstation</h3>
+        <div>
+        <button type="submit" class="btn text-white" id="btn" onclick="openPopup()">Tambah Data</button>
         <div class="popup" id="popup">
             <br>
             <h3>Formulir Penambahan Data PS</h3>
@@ -93,32 +143,39 @@ if (isset($_POST['submit'])) {
                 </form>
         </div>
     </div>
-    <table class="table table-striped table-dark">
-        <tr>
-            <th class="text-white">ID PS</th>
-            <th class="text-white">Tipe PS</th>
-            <th class="text-white">Harga Per Jam</th>
-            <th class="text-white">Hapus</th>
-            <th class="text-white">Edit</th>
-        </tr>
-        <?php
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td>" . $row["id_ps"] . "</td>";
-                    echo "<td>" . $row["tipe_ps"] . "</td>";
-                    echo "<td>" . $row["harga"] . "</td>";
-                    echo "<td><a href='hapus_ps.php?id=" . $row['id_ps'] . "' class='btn btn-danger btn-sm' onclick='konfirmasiHapus()'>Hapus</a></td>";
-                    echo "<td><a href='edit_ps.php?id=" . $row['id_ps'] . "' class='btn btn-primary btn-sm'>Edit</a></td>";
-                    echo "</tr>";
-                }
-            } else {
-                echo "<tr><td colspan='3'>Tidak ada data yang ditemukan</td></tr>";
-            }
-        ?>
-    </table>
+    <div class="tabular--wrapper">
+        <h3 class="main--title">Tabel Playstation</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="text-white">ID PS</th>
+                        <th class="text-white">Tipe PS</th>
+                        <th class="text-white">Harga Per Jam</th>
+                        <th class="text-white">Hapus</th>
+                        <th class="text-white">Edit</th>
+                    </tr>
+                </thead>
+                <?php
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<td>" . $row["id_ps"] . "</td>";
+                            echo "<td>" . $row["tipe_ps"] . "</td>";
+                            echo "<td>" . $row["harga"] . "</td>";
+                            echo "<td><a href='hapus_ps.php?id=" . $row['id_ps'] . "' class='btn-delete' onclick='konfirmasiHapus()'></a></td>";
+                            echo "<td><a href='edit_ps.php?id=" . $row['id_ps'] . "' class='btn-edit'></a></td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='3'>Tidak ada data yang ditemukan</td></tr>";
+                    }
+                ?>
+            </table>
+        </div>
+    </div>
+    </section>
 
-        <script>
+    <script>
             let popup = document.getElementById("popup");
 
             function openPopup(){
@@ -146,9 +203,38 @@ if (isset($_POST['submit'])) {
         } else {
         }
     }
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </script>
+    <script>
+        const body = document.querySelector('body'),
+        sidebar = body.querySelector('nav'),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
+        if (localStorage.getItem("theme") === "dark") {
+        body.classList.add("dark");
+        modeText.innerText = "Light mode";
+        }
+        toggle.addEventListener("click" , () =>{
+            sidebar.classList.toggle("close");
+        })
+        searchBtn.addEventListener("click" , () =>{
+            sidebar.classList.remove("close");
+        })
+        modeSwitch.addEventListener("click" , () =>{
+            body.classList.toggle("dark");
+            if(body.classList.contains("dark")){
+                modeText.innerText = "Light mode";
+                localStorage.setItem("theme", "dark");
+            }else{
+                modeText.innerText = "Dark mode";
+                localStorage.setItem("theme", "light");
+            }
+        });
+    </script>
 </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </html>

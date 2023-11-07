@@ -7,9 +7,97 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.main--title{
+    color: #4a80d0;
+}
+
+.tabular--wrapper{
+    background: #fff;
+    margin-top: 1rem;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.table-container{
+    width: 100%;
+}
+
+.table-container button{
+    color: green;
+    background: none;
+    cursor: pointer;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead{
+    background: #4a80d0;
+    color: #fff;
+}
+
+th{
+    padding: 11px;
+    text-align: left;
+}
+
+tbody{
+    background: #e8e8e8;
+}
+
+td{
+    padding: 11px;
+    font-size: 14px;
+    color: #333;
+}
+
+tr:nth-child(even){
+    background: #fff;
+}
+
+tfoot{
+    background: rgb(255, 255, 255);
+    font-weight: bold;
+    color: #fff;
+}
+
+tfoot td{
+    padding: 10px;
+}
+
+.btn-delete{
+    border: 1px solid #d07471;
+    background: #db5d59 url('button/hapus.png') no-repeat 9px 9px;
+    height: 22px;
+    padding-left: 30px;
+    padding-top: 10px;
+    transition-duration: 0.4s;
+}
+
+.btn-delete:hover {
+    background-color: #dd8683;
+    color: white;
+}
+
+.btn-edit{
+    border: 1px solid #4a80d0;
+    background: #1763d5 url('button/edit.png') no-repeat 9px 9px;
+    height: 22px;
+    padding-left: 30px;
+    padding-top: 10px;
+    transition-duration: 0.4s;
+}
+
+.btn-edit:hover {
+    background-color: #718fbb;
+    color: white;
+}
+
 :root{
     --sidebar-color: #FFF;
-    --primary-color: #695CFE;
+    --primary-color: #4a80d0;
     --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
     --text-color: #707070;
@@ -23,7 +111,7 @@ body{
     min-height: 100vh;
     background-color: var(--body-color);
     transition: var(--tran-05);
-    background-image: url("assets/112233.jpg");
+    background-color: #e3dbdb;
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -38,31 +126,45 @@ body{
     color: #fff;
 }
 body.dark{
-    background-image: url("assets/11133.jpg");
+    background-color: #1f1f1f;
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    --sidebar-color: #1f1f1f;
+    --sidebar-color: #292929;
     --primary-color: #5a5a5a;
     --primary-color-light: #2d2d2d;
     --toggle-color: #fff;
     --text-color: #ccc;
 }
 #palettedoang{
-    color: #08cbe9;
+    color: #000000;
 }
 #form{
     background: transparent;
     backdrop-filter: blur(15px);
     border-color: rgb(255, 255, 255);
 }
+#form2{
+    background: rgb(219, 219, 219);
+    border-color: rgb(202, 202, 202);
+}
 #btn{
-    background-color: #d227a7;
+    border: none;
+    color: #000000;
+    font-size: 24px;
+    border-radius: 4px;
+    background-color: #ffffff;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 #text{
     color: #ffffff;
+}
+#text2{
+    color: #000000;
+}
+#text-title{
+    color: #4a80d0;
 }
 #klikdisini{
     color: rgb(12, 238, 16);

@@ -77,7 +77,7 @@ if(isset($_POST['login'])) {
                             <input type="checkbox" name="" onclick="myFunction()">
                         </div>
                         <div class="d-flex justify-content-center">
-                            <button type="submit" name="login" class="btn text-light" id="btn">Login</button>
+                            <button type="submit" name="login" class="btn" id="btn">Login</button>
                         </div>
                     </form>
                 </div>

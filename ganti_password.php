@@ -75,7 +75,7 @@ if (isset($_POST['ganti_password'])) {
                         </div>
                         <br>
                         <div class="d-flex justify-content-center">
-                            <button type="submit" name="ganti_password" class="btn text-light" id="btn">Ganti Password</button>
+                            <button type="submit" name="ganti_password" class="btn" id="btn">Ganti Password</button>
                         </div>
                     </form>
                 </div>

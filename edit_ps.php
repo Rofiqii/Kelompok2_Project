@@ -37,23 +37,23 @@ $row = $result->fetch_assoc();
     </nav>
     <div class="row justify-content-center pt-4">
         <div class="col-md-4">
-            <div class="card mt-4 shadow-lg" id="form">
-                <div class="text-center" style="border: border-style: solid; border-color: rgb(255, 255, 255);"></div>
+            <div class="card mt-4 shadow-lg" id="form2">
+                <div class="text-center"></div>
                     <div class="container text-white">
-                        <h2 class="text-center">Edit Data PlayStation</h2>
+                        <h2 class="text-center text-logo" id="text2">Edit Data PlayStation</h2>
                         <form action="" method="POST">
                             <div class="d-flex justify-content-center">
-                                <p>ID PS : <?php echo $row['id_ps']; ?></p>
+                                <p id="text2">ID PS : <?php echo $row['id_ps']; ?></p>
                             </div>
                             <input type="hidden" name="id_ps" class="form-control" value="<?php echo $row['id_ps']; ?>">
-                            <label for="tipe_ps">Tipe PS :</label>
+                            <label for="tipe_ps" id="text2">Tipe PS :</label>
                             <input type="text" name="tipe_ps" class="form-control" value="<?php echo $row['tipe_ps']; ?>" required>
                             <br>
-                            <label for="harga">Harga Per Jam :</label>
+                            <label for="harga" id="text2">Harga Per Jam :</label>
                             <input type="text" name="harga" class="form-control" value="<?php echo $row['harga']; ?>" required>
                             <br>
                             <div class="d-flex justify-content-center">
-                                <button type="submit" name="submit" class="btn text-white" id="btn">Simpan Perubahan</button>
+                                <button type="submit" name="submit" class="btn" id="btn">Simpan Perubahan</button>
                             </div>
                         </form>
                         <br>

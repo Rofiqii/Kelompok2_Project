@@ -105,7 +105,7 @@ if (isset($_POST['register'])) {
                         </div>
                             <br>
                         <div class="text-center">
-                            <button type="submit" name="register" class="btn text-light" id="btn">Register</button>
+                            <button type="submit" name="register" class="btn" id="btn">Register</button>
                         </div>
                     </form>
                 </div>

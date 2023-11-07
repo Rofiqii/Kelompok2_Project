@@ -3,9 +3,11 @@ session_start();
 require 'koneksi.php';
 
 $rentalps = $_SESSION['rentalps'];
+$name = "";
 $result = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '{$rentalps}'");
-while($row = mysqli_fetch_assoc($result))
-$name = $row['fullname'];
+while ($row = mysqli_fetch_assoc($result)) {
+    $name = $row['fullname'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +21,6 @@ $name = $row['fullname'];
     <link rel="stylesheet" href="style.css">
 </head>
 
-</head>
 <body>
     <nav class="sidebar close">
         <header>
@@ -67,6 +68,10 @@ $name = $row['fullname'];
                 </ul>
             </div>
             <div class="bottom-content">
+                <li class="">
+                    <i class='bx bx-user-circle icon'></i>
+                    <span class="text logo-text profession" id="userFullName"><?php echo $name; ?>Nama Profile</span>
+                </li>
                 <li class="" href="login.php" onclick="confirmLogout(event)">
                     <a href="#">
                         <i class='bx bx-log-out icon'></i>
@@ -96,7 +101,7 @@ $name = $row['fullname'];
         </div>
     </nav>
     <section class="home">
-        <div class="text" id="text">Selamat Datang User</div>
+        <div class="text logo-text">Dashboard</div>
     </section>
     <script>
         const body = document.querySelector('body'),
@@ -125,6 +130,12 @@ $name = $row['fullname'];
                 localStorage.setItem("theme", "light");
             }
         });
+    </script>
+    <script>
+        var userFullName = document.querySelector("#userFullName");
+        if (userFullName && "<?php echo $name; ?>") {
+            userFullName.textContent = "<?php echo $name; ?>";
+        }
     </script>
 </body>
 

@@ -86,7 +86,7 @@ if (isset($_POST['lupa_password'])) {
                             </div>
                             <br>
                             <div class="d-flex justify-content-center">
-                                <button type="submit" name="lupa_password" class="btn text-light" id="btn">Submit</button>
+                                <button type="submit" name="lupa_password" class="btn" id="btn">Submit</button>
                             </div>
                         </form>  
                 </div>

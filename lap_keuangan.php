@@ -65,6 +65,10 @@ $name = $row['fullname'];
                 </ul>
             </div>
             <div class="bottom-content">
+                <li class="">
+                    <i class='bx bx-user-circle icon'></i>
+                    <span class="text logo-text profession">Nama Profile</span>
+                </li>
                 <li class="" href="login.php" onclick="confirmLogout(event)">
                     <a href="#">
                         <i class='bx bx-log-out icon'></i>
@@ -94,7 +98,7 @@ $name = $row['fullname'];
         </div>
     </nav>
     <section class="home">
-        <div class="text" id="text">Selamat Datang User</div>
+        <div class="text logo-text">Laporan Keuangan</div>
     </section>
     <script>
         const body = document.querySelector('body'),
