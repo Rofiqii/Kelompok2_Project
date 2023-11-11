@@ -1,7 +1,7 @@
 <?php
 session_start();
 require 'koneksi.php';
-$rentalps = $_SESSION['rentalps'];
+$rentalps = isset($_SESSION['rentalps']['username']) ? $_SESSION['rentalps']['username'] : null;
 $result = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '{$rentalps}'");
 while($row = mysqli_fetch_assoc($result))
 $name = $row['fullname'];
@@ -69,7 +69,7 @@ $name = $row['fullname'];
             <div class="bottom-content">
                 <li class="">
                     <i class='bx bx-user-circle icon'></i>
-                    <span class="text logo-text profession">Nama Profile</span>
+                    <span class="text logo-text profession"><?php echo isset($_SESSION['fullname']) ? $_SESSION['fullname'] : 'Nama Profile'; ?></span>
                 </li>
                 <li class="" href="login.php" onclick="confirmLogout(event)">
                     <a href="#">

@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
             <div class="menu">
                 <li class="search-box">
                     <i class='bx bx-search icon'></i>
-                    <input type="text" placeholder="Search...">
+                    <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search...">
                 </li>
                 <ul class="menu-links">
                     <li class="nav-link">
@@ -87,7 +87,7 @@ if (isset($_POST['submit'])) {
             <div class="bottom-content">
                 <li class="">
                     <i class='bx bx-user-circle icon'></i>
-                    <span class="text logo-text profession">Nama Profile</span>
+                    <span class="text logo-text profession"><?php echo isset($_SESSION['fullname']) ? $_SESSION['fullname'] : 'Nama Profile'; ?></span>
                 </li>
                 <li class="" href="login.php" onclick="confirmLogout(event)">
                     <a href="#">
@@ -233,6 +233,30 @@ if (isset($_POST['submit'])) {
             }
         });
     </script>
+    <script>
+    function searchTable() {
+    let input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("searchInput");
+    filter = input.value.toUpperCase();
+    table = document.querySelector("table");
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td");
+        for (let j = 0; j < td.length; j++) {
+            if (td[j]) {
+                txtValue = td[j].textContent || td[j].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                    break;
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+}
+</script>
 </body>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

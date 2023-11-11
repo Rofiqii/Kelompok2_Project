@@ -15,7 +15,9 @@ if(isset($_POST['login'])) {
         if(mysqli_num_rows($result) > 0) {
             $rentalps = mysqli_fetch_assoc($result);
             if($rentalps['password'] == $pass) {
-                $_SESSION['rentalps'] = $user;
+                $_SESSION['rentalps'] = $rentalps;
+                $_SESSION['username'] = $rentalps['username'];
+                $_SESSION['fullname'] = $rentalps['fullname'];
                 header('Location: home.php');
             } else {
                 $error = "Username atau password salah";
@@ -27,7 +29,6 @@ if(isset($_POST['login'])) {
         $error = "Data tidak boleh kosong";
     }
 }
-
 ?>
 
 <!DOCTYPE html>

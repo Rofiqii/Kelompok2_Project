@@ -2,7 +2,7 @@
 session_start();
 require 'koneksi.php';
 
-$rentalps = $_SESSION['rentalps'];
+$rentalps = isset($_SESSION['rentalps']['username']) ? $_SESSION['rentalps']['username'] : null;
 $name = "";
 $result = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '{$rentalps}'");
 while ($row = mysqli_fetch_assoc($result)) {
@@ -71,7 +71,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             <div class="bottom-content">
                 <li class="">
                     <i class='bx bx-user-circle icon'></i>
-                    <span class="text logo-text profession" id="userFullName"><?php echo $name; ?>Nama Profile</span>
+                    <span class="text logo-text profession"><?php echo isset($_SESSION['fullname']) ? $_SESSION['fullname'] : 'Nama Profile'; ?></span>
                 </li>
                 <li class="" href="login.php" onclick="confirmLogout(event)">
                     <a href="#">
@@ -163,12 +163,6 @@ while ($row = mysqli_fetch_assoc($result)) {
                 localStorage.setItem("theme", "light");
             }
         });
-    </script>
-    <script>
-        var userFullName = document.querySelector("#userFullName");
-        if (userFullName && "<?php echo $name; ?>") {
-            userFullName.textContent = "<?php echo $name; ?>";
-        }
     </script>
 </body>
 
