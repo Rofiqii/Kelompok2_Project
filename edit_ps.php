@@ -58,7 +58,7 @@ $row = $result->fetch_assoc();
                         </form>
                         <br>
                         <div class="d-flex justify-content-center">
-                        <a href="detail_ps.php" id="klikdisini">Kembali</a>
+                        <a href="detail_ps.php" id="klikdisini2">Kembali</a>
                         </div>
                         <br>
                     </div>

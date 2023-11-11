@@ -22,10 +22,11 @@ while ($row = mysqli_fetch_assoc($result)) {
 </head>
 
 <body>
-    <nav class="sidebar close">
+    <nav class="sidebar">
         <header>
             <div class="image-text">
                 <span class="image">
+                    <i class='bx bxs-joystick icon'></i>
                 </span>
                 <div class="text logo-text">
                     <span class="name">Rental</span>
@@ -102,6 +103,38 @@ while ($row = mysqli_fetch_assoc($result)) {
     </nav>
     <section class="home">
         <div class="text logo-text">Dashboard</div>
+        <div class="card--container">
+            <h1 class="main--title">Informasi</h1>
+            <div class="card--wrapper">
+                <div class="info--card light-blue">
+                    <div class="card--header">
+                        <div class="amount">
+                            <span class="title" id="text">Booking</span>
+                            <span class="amount--value" id="text">11 PS</span>
+                        </div>
+                        <i class='bx bx-desktop blue icon2'></i>
+                    </div>
+                </div>
+                <div class="info--card light-yellow">
+                    <div class="card--header">
+                        <div class="amount">
+                            <span class="title" id="text">Pemasukan Hari Ini</span>
+                            <span class="amount--value" id="text">Rp 150.000</span>
+                        </div>
+                        <i class='bx bx-dollar-circle yellow icon2' ></i>
+                    </div>
+                </div>
+                <div class="info--card light-green">
+                    <div class="card--header">
+                        <div class="amount">
+                            <span class="title" id="text">Total Jumlah Pengunjung Hari Ini</span>
+                            <span class="amount--value" id="text">23</span>
+                        </div>
+                        <i class='bx bxs-user green icon2'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <script>
         const body = document.querySelector('body'),

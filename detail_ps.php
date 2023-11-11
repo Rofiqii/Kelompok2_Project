@@ -38,10 +38,11 @@ if (isset($_POST['submit'])) {
 
 </head>
 <body>
-    <nav class="sidebar close">
+    <nav class="sidebar">
         <header>
             <div class="image-text">
                 <span class="image">
+                    <i class='bx bxs-joystick icon'></i>
                 </span>
                 <div class="text logo-text">
                     <span class="name">Rental</span>
@@ -119,14 +120,14 @@ if (isset($_POST['submit'])) {
     <section class="home">
         <h3 class="text logo-text">Detail Playstation</h3>
         <div>
-        <button type="submit" class="btn text-white" id="btn" onclick="openPopup()">Tambah Data</button>
+        <button type="submit" class="btn text-white" id="btn" onclick="openPopup()"><i class='bx bx-plus-circle icon'></i> Tambah Data</button>
         <div class="popup" id="popup">
             <br>
-            <h3>Formulir Penambahan Data PS</h3>
+            <h3 id="text2">Formulir Penambahan Data PS</h3>
                 <form action="" method="POST">
-                    <label for="id_ps">ID PS : </label>
+                    <label for="id_ps" id="text2">ID PS : </label>
                     <input type="text" name="id_ps" class="form-control" placeholder="Isi dengan angka" required><br>
-                    <label for="tipe_ps">Tipe PS : </label>
+                    <label for="tipe_ps" id="text2">Tipe PS : </label>
                     <select name="tipe_ps" class="form-control" required>
                         <option>Pilih PS yang akan ditambah</option>
                         <option value="PS1">PS1</option>
@@ -135,7 +136,7 @@ if (isset($_POST['submit'])) {
                         <option value="PS4">PS4</option>
                         <option value="PS5">PS5</option>
                     </select><br>
-                    <label for="harga">Harga Per Jam : </label>
+                    <label for="harga" id="text2">Harga Per Jam : </label>
                     <input type="text" name="harga" class="form-control" placeholder="Isi tanpa Rp" required>
                     <br>
                     <button type="button" onclick="closePopup()">Kembali</button>
@@ -144,7 +145,7 @@ if (isset($_POST['submit'])) {
         </div>
     </div>
     <div class="tabular--wrapper">
-        <h3 class="main--title">Tabel Playstation</h3>
+        <h1 class="main--title">Tabel Playstation</h1>
         <div class="table-container">
             <table>
                 <thead>

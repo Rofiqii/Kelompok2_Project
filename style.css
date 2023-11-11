@@ -16,6 +16,7 @@
     margin-top: 1rem;
     border-radius: 10px;
     padding: 2rem;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .table-container{
@@ -67,12 +68,110 @@ tfoot td{
     padding: 10px;
 }
 
+.card--container{
+    background: #FFF;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card--wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.info--card{
+    background: #ccc5c5;
+    border-radius: 10px;
+    padding: 1.2rem;
+    width: 350px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.info--card:hover{
+    transform: translateY(-5px);
+}
+
+.card--header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.amount{
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.amount--value{
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+/* Color CSS */
+.light-red{
+    background: rgb(204, 145, 145);
+}
+.light-blue{
+    background: #8ca2c4;
+}
+.light-green{
+    background: #a4ca9b;
+}
+.light-purple{
+    background: rgb(175, 116, 192);
+}
+.light-yellow{
+    background: #c1c58c;
+}
+.red{
+    background: rgb(209, 9, 9);
+}
+.blue{
+    background: #0e5dd2;
+}
+.green{
+    background: #38cd12;
+}
+.purple{
+    background: rgb(169, 17, 211);
+}
+.yellow{
+    background: #d1df0c;
+}
+
+.icon2{
+    color: #FFF;
+    padding: 1rem;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+}
+
 .btn-delete{
     border: 1px solid #d07471;
-    background: #db5d59 url('button/hapus.png') no-repeat 9px 9px;
+    border-radius: 10px;
+    background: #db5d59 url('button/hapus.png') no-repeat 15px 12px;
     height: 22px;
-    padding-left: 30px;
+    padding-left: 20px;
     padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
     transition-duration: 0.4s;
 }
 
@@ -83,10 +182,13 @@ tfoot td{
 
 .btn-edit{
     border: 1px solid #4a80d0;
-    background: #1763d5 url('button/edit.png') no-repeat 9px 9px;
+    border-radius: 10px;
+    background: #1763d5 url('button/edit.png') no-repeat 15px 12px;
     height: 22px;
-    padding-left: 30px;
+    padding-left: 20px;
     padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
     transition-duration: 0.4s;
 }
 
@@ -113,12 +215,6 @@ body{
     transition: var(--tran-05);
     background-color: #e3dbdb;
     height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     transition: var(--tran-05);
 }
 ::selection{
@@ -137,22 +233,23 @@ body.dark{
     --toggle-color: #fff;
     --text-color: #ccc;
 }
-#palettedoang{
-    color: #000000;
-}
 #form{
     background: transparent;
     backdrop-filter: blur(15px);
     border-color: rgb(255, 255, 255);
 }
 #form2{
-    background: rgb(219, 219, 219);
-    border-color: rgb(202, 202, 202);
+    background: rgb(243, 243, 243);
+    border-color: rgb(211, 211, 211);
 }
 #btn{
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
     border: none;
     color: #000000;
-    font-size: 24px;
+    font-size: 20px;
     border-radius: 4px;
     background-color: #ffffff;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
@@ -169,25 +266,26 @@ body.dark{
 #klikdisini{
     color: rgb(12, 238, 16);
 }
+#klikdisini2{
+    color: rgb(0, 0, 0);
+}
 .popup{
-    background-image: url("assets/123123.jpg");
+    background: rgb(243, 243, 243);
     width: 400px;
     height: 70vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     position: absolute;
     top: 0;
     left: 50%;
     border-style: solid;
     border-radius: 6px;
-    border-color: #75e9a8;
+    border-color: rgb(211, 211, 211);
     transform: translate(-50%, -50%) scale(0.1);
     text-align: center;
     padding: 0 10px 10px;
     color: #ffffff;
     visibility: hidden;
     transition: transform 0.4s, top 0.4s;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
 }
 .open-popup{
     visibility: visible;
@@ -197,12 +295,12 @@ body.dark{
 #popupbtn{
     width: 35%;
     margin-top: 0px;
-    padding: 10px 0;
-    background: #d227a7;
+    padding: 8px 0;
+    background: #53b75d;
     color: #ffffff;
     border: 0;
     outline: none;
-    font-size: 18px;
+    font-size: 15px;
     border-radius: 4px;
     cursor: pointer;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
@@ -210,12 +308,12 @@ body.dark{
 .popup button{
     width: 35%;
     margin-top: 0px;
-    padding: 10px 0;
-    background: #4e175f;
+    padding: 8px 0;
+    background: rgb(201, 58, 58);
     color: #ffffff;
     border: 0;
     outline: none;
-    font-size: 18px;
+    font-size: 15px;
     border-radius: 4px;
     cursor: pointer;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
@@ -436,9 +534,9 @@ body.dark .switch::before{
     position: absolute;
     top: 0;
     top: 0;
-    left: 250px;
+    left: 270px;
     height: 100vh;
-    width: calc(100% - 250px);
+    width: calc(100% - 290px);
     background-color: var(--body-color);
     transition: var(--tran-05);
 }
@@ -449,9 +547,9 @@ body.dark .switch::before{
     padding: 12px 60px;
 }
 .sidebar.close ~ .home{
-    left: 78px;
+    left: 120px;
     height: 100vh;
-    width: calc(100% - 78px);
+    width: calc(100% - 150px);
 }
 body.dark .home .text{
     color: var(--text-color);

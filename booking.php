@@ -20,10 +20,11 @@ $name = $row['fullname'];
 
 </head>
 <body>
-    <nav class="sidebar close">
+    <nav class="sidebar">
         <header>
             <div class="image-text">
                 <span class="image">
+                    <i class='bx bxs-joystick icon'></i>
                 </span>
                 <div class="text logo-text">
                     <span class="name">Rental</span>
