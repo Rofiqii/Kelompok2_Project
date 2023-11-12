@@ -34,31 +34,52 @@ if (isset($_POST['lupa_password'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lupa Password - RENTAL POWER GAMES</title>
+    <title>Lupa Password | RENTAL POWER GAMES</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="background-image: url(assets/112233.jpg);
-    height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;">
-    <div class="card-header text-center">
-        <h1 class="text-light mt-3">RENTAL POWER GAMES</h1>
-    </div>
-    <div class="row justify-content-center pt-4">
-        <div class="col-md-4">
-            <div class="card text-white shadow-lg" id="form">
-                <div class="card-header text-center" style="border: border-style: solid; border-color: rgb(255, 255, 255);">
-                    <h5 class="text-light">Lupa Password</h5>
-                    </div>
-                    <div class="card-body">
+<body>
+    <div class="wrapper">
+        <div class="container main">
+            <div class="row">
+                <div class="col-md-6 side-image slideshow-container">
+                <script>
+                    const slideshowContainer = document.querySelector('.slideshow-container');
+                    let currentImageIndex = 0;
+                    const images = [
+                    'assets/00122.jpg',
+                    'assets/7722.jpg',
+                    'assets/8877.jpg',
+                    'assets/555111.jpg',
+                    'assets/11234.jpg',
+                    'assets/1276415.jpg',
+                    'assets/8881.jpg',
+                    'assets/34441.jpg',
+                    'assets/16170.jpg',
+                    'assets/13212.png',
+                    'assets/9911.jpg',
+                    'assets/32221.jpg',
+                    'assets/6611.jpg',
+                    'assets/3344.jpg',
+                    'assets/2042.jpg'
+                    ];
+                    function changeBackgroundImage() {
+                    slideshowContainer.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+                    currentImageIndex = (currentImageIndex + 1) % images.length;
+                    }
+                    changeBackgroundImage();
+                    setInterval(changeBackgroundImage, 15000);
+                    </script>
+                </div>
+                    <div class="col-md-6 right">
                         <form action="" method="post">
+                            <br>
+                            <div class="texttitle text-center">
+                                <p>RENTAL POWER GAMES</p>
+                            </div>
+                            <h3 class="mb-3 mt-3 text-center">LUPA PASSWORD</h3>
                             <?php if (isset($error)): ?>
                                 <div class="alert alert-danger"><?= $error; ?></div>
                             <?php endif; ?>
@@ -86,14 +107,15 @@ if (isset($_POST['lupa_password'])) {
                             </div>
                             <br>
                             <div class="d-flex justify-content-center">
-                                <button type="submit" name="lupa_password" class="btn" id="btn">Submit</button>
+                                <button type="submit" name="lupa_password" class="btn" id="btn-luppass">Submit</button>
+                            </div>
+                            <div class="text-center mt-3">
+                                <a href="login.php" id="klikdisini">Kembali ke login.</a>
                             </div>
                         </form>  
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="text-center mt-3">
-            <a href="login.php" id="klikdisini">Kembali ke login.</a>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

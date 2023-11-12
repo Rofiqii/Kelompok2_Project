@@ -7,12 +7,99 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.wrapper{
+    background: #e3dbdb;
+    padding: 0 20px 0 20px;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.texttitle p{
+    color: #000000;
+    font-size: 30px;
+}
+
+i{
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.side-image{
+    background-image: url("assets/32221.jpg");
+    background-image: url("assets/3344.jpg");
+    background-image: url("assets/6611.jpg");
+    background-image: url("assets/7722.jpg");
+    background-image: url("assets/8877.jpg");
+    background-image: url("assets/9911.jpg");
+    background-image: url("assets/8881.jpg");
+    background-image: url("assets/555111.jpg");
+    background-image: url("assets/11234.jpg");
+    background-image: url("assets/00122.jpg");
+    background-image: url("assets/2042.jpg");
+    background-image: url("assets/13212.png");
+    background-image: url("assets/16170.jpg");
+    background-image: url("assets/34441.jpg");
+    background-image: url("assets/1276415.jpg");
+    animation: slide 15s infinite;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px 0 0 10px;
+    position: relative;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+}
+
+@keyframes slide {
+    0%, 100% {
+        opacity: 0;
+    }
+    20%, 80% {
+        opacity: 1;
+    }
+}
+
+.row{
+    width: 900px;
+    height: 550px;
+    border-radius: 10px;
+    background: #fff;
+    padding: 0px;
+    box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);
+}
+
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.right-register{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    position: relative;
+    max-height: 550px;
+    overflow-y: auto;
+}
+
 .main--title{
     color: #4a80d0;
 }
 
 .tabular--wrapper{
-    background: #fff;
+    background: #ffffff;
     margin-top: 1rem;
     border-radius: 10px;
     padding: 2rem;
@@ -47,7 +134,7 @@ th{
 }
 
 tbody{
-    background: #e8e8e8;
+    background: #dcdcdc;
 }
 
 td{
@@ -57,7 +144,7 @@ td{
 }
 
 tr:nth-child(even){
-    background: #fff;
+    background: #ffffff;
 }
 
 tfoot{
@@ -71,7 +158,7 @@ tfoot td{
 }
 
 .card--container{
-    background: #FFF;
+    background: #ffffff;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
@@ -154,6 +241,21 @@ tfoot td{
 .yellow{
     background: #d1df0c;
 }
+.dark-red{
+    background: rgb(126, 7, 7);
+}
+.dark-blue{
+    background: rgb(8, 48, 107);
+}
+.dark-green{
+    background: #1f700b;
+}
+.dark-purple{
+    background: rgb(96, 10, 120);
+}
+.dark-yellow{
+    background: #848d08;
+}
 
 .icon2{
     color: #FFF;
@@ -166,7 +268,6 @@ tfoot td{
 }
 
 .btn-delete{
-    border: 1px solid #d07471;
     border-radius: 10px;
     background: #db5d59 url('button/hapus.png') no-repeat 15px 12px;
     height: 22px;
@@ -183,7 +284,6 @@ tfoot td{
 }
 
 .btn-edit{
-    border: 1px solid #4a80d0;
     border-radius: 10px;
     background: #1763d5 url('button/edit.png') no-repeat 15px 12px;
     height: 22px;
@@ -256,6 +356,55 @@ body.dark{
     background-color: #ffffff;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
+#btn-login{
+    padding-left: 170px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 170px;
+    border: 2px solid;
+    border-color: #cccccc;
+    color: #000000;
+    font-size: 20px;
+    border-radius: 50px;
+    background-color: #e8e8e8;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+#btn-register{
+    padding-left: 165px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 165px;
+    border: none;
+    color: #000000;
+    font-size: 20px;
+    border-radius: 50px;
+    background-color: #e8e8e8;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+#btn-luppass{
+    padding-left: 170px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 170px;
+    border: none;
+    color: #000000;
+    font-size: 20px;
+    border-radius: 50px;
+    background-color: #e8e8e8;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+#btn-ganpass{
+    padding-left: 170px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 170px;
+    border: none;
+    color: #000000;
+    font-size: 20px;
+    border-radius: 50px;
+    background-color: #e8e8e8;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
 #text{
     color: #ffffff;
 }
@@ -266,7 +415,7 @@ body.dark{
     color: #4a80d0;
 }
 #klikdisini{
-    color: rgb(12, 238, 16);
+    color: rgb(12, 155, 238);
 }
 #klikdisini2{
     color: rgb(0, 0, 0);

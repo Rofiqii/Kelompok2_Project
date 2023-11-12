@@ -16,7 +16,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - RENTAL POWER GAMES</title>
+    <title>Dashboard | RENTAL POWER GAMES</title>
     <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -109,28 +109,28 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <div class="info--card light-blue">
                     <div class="card--header">
                         <div class="amount">
-                            <span class="title" id="text">Booking</span>
-                            <span class="amount--value" id="text">11 PS</span>
+                            <span class="title" id="text">PlayStation Aktif</span>
+                            <span class="amount--value" id="text">8 PS</span>
                         </div>
                         <i class='bx bx-desktop blue icon2'></i>
-                    </div>
-                </div>
-                <div class="info--card light-yellow">
-                    <div class="card--header">
-                        <div class="amount">
-                            <span class="title" id="text">Pemasukan Hari Ini</span>
-                            <span class="amount--value" id="text">Rp 150.000</span>
-                        </div>
-                        <i class='bx bx-dollar-circle yellow icon2' ></i>
                     </div>
                 </div>
                 <div class="info--card light-green">
                     <div class="card--header">
                         <div class="amount">
-                            <span class="title" id="text">Total Jumlah Pengunjung Hari Ini</span>
-                            <span class="amount--value" id="text">23</span>
+                            <span class="title" id="text">Total Booking</span>
+                            <span class="amount--value" id="text">12</span>
                         </div>
                         <i class='bx bxs-user green icon2'></i>
+                    </div>
+                </div>
+                <div class="info--card light-yellow">
+                    <div class="card--header">
+                        <div class="amount">
+                            <span class="title" id="text">Pendapatan Hari Ini</span>
+                            <span class="amount--value" id="text">Rp.135.000</span>
+                        </div>
+                        <i class='bx bx-dollar-circle yellow icon2' ></i>
                     </div>
                 </div>
             </div>

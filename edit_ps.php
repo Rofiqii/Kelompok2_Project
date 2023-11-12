@@ -26,7 +26,7 @@ $row = $result->fetch_assoc();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit PS - RENTAL POWER GAMES</title>
+    <title>Edit PS | RENTAL POWER GAMES</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
     <link rel="stylesheet" href="style.css">
