@@ -101,6 +101,26 @@ $name = $row['fullname'];
     </nav>
     <section class="home">
         <div class="text logo-text">Booking</div>
+        <div class="tabular--wrapper">
+        <h1 class="main--title">Tabel Booking</h1>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="text-white">Admin</th>
+                        <th class="text-white">Customer</th>
+                        <th class="text-white">ID Pemesanan</th>
+                        <th class="text-white">ID PS</th>
+                        <th class="text-white">Waktu</th>
+                        <th class="text-white">Durasi</th>
+                        <th class="text-white">Total Harga</th>
+                        <th class="text-white">Tanggal</th>
+                        <th class="text-white">Status</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
     </section>
     <script>
         const body = document.querySelector('body'),

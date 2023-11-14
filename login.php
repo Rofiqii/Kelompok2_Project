@@ -54,10 +54,16 @@ if(isset($_POST['login'])) {
                     let currentImageIndex = 0;
                     const images = [
                     'assets/32221.jpg',
+                    'assets/0099.jpg',
+                    'assets/5566.jpg',
+                    'assets/3399.jpg',
                     'assets/6611.jpg',
+                    'assets/5511.jpg',
                     'assets/3344.jpg',
+                    'assets/0022.jpg',
                     'assets/7722.jpg',
                     'assets/8877.jpg',
+                    'assets/4433.jpg',
                     'assets/9911.jpg',
                     'assets/8881.jpg',
                     'assets/555111.jpg',
@@ -74,7 +80,7 @@ if(isset($_POST['login'])) {
                     currentImageIndex = (currentImageIndex + 1) % images.length;
                     }
                     changeBackgroundImage();
-                    setInterval(changeBackgroundImage, 15000);
+                    setInterval(changeBackgroundImage, 8000);
                     </script>
                 </div>
                 <div class="col-md-6 right">

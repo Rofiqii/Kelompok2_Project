@@ -128,7 +128,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                     <div class="card--header">
                         <div class="amount">
                             <span class="title" id="text">Pendapatan Hari Ini</span>
-                            <span class="amount--value" id="text">Rp.135.000</span>
+                            <span class="amount--value" id="text">Rp 135.000</span>
                         </div>
                         <i class='bx bx-dollar-circle yellow icon2' ></i>
                     </div>

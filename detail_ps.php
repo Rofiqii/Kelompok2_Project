@@ -124,12 +124,12 @@ if (isset($_POST['submit'])) {
         <div class="popup" id="popup">
             <br>
             <h3 id="text2">Formulir Penambahan Data PS</h3>
+            <br>
                 <form action="" method="POST">
                     <label for="id_ps" id="text2">ID PS : </label>
-                    <input type="text" name="id_ps" class="form-control" placeholder="Isi dengan angka" required><br>
+                    <input type="text" name="id_ps" class="form-input" placeholder="Isi dengan angka" required><br>
                     <label for="tipe_ps" id="text2">Tipe PS : </label>
-                    <select name="tipe_ps" class="form-control" required>
-                        <option>Pilih PS yang akan ditambah</option>
+                    <select name="tipe_ps" class="form-input" required>
                         <option value="PS1">PS1</option>
                         <option value="PS2">PS2</option>
                         <option value="PS3">PS3</option>
@@ -137,10 +137,12 @@ if (isset($_POST['submit'])) {
                         <option value="PS5">PS5</option>
                     </select><br>
                     <label for="harga" id="text2">Harga Per Jam : </label>
-                    <input type="text" name="harga" class="form-control" placeholder="Isi tanpa Rp" required>
+                    <input type="text" name="harga" class="form-input" placeholder="Isi tanpa Rp" required>
+                    <br>
                     <br>
                     <button type="button" onclick="closePopup()">Kembali</button>
                     <button onclick="refreshPage()" type="submit" name="submit" id="popupbtn" class="btn text-white">Simpan Data</button>
+                    <br>
                 </form>
         </div>
     </div>

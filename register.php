@@ -53,12 +53,18 @@ if (isset($_POST['register'])) {
                     'assets/2042.jpg',
                     'assets/11234.jpg',
                     'assets/00122.jpg',
+                    'assets/4433.jpg',
+                    'assets/5511.jpg',
+                    'assets/5566.jpg',
+                    'assets/3399.jpg',
                     'assets/1276415.jpg',
                     'assets/8881.jpg',
+                    'assets/0099.jpg',
                     'assets/34441.jpg',
                     'assets/13212.png',
                     'assets/9911.jpg',
                     'assets/32221.jpg',
+                    'assets/0022.jpg',
                     'assets/6611.jpg',
                     'assets/3344.jpg',
                     'assets/7722.jpg',
@@ -71,7 +77,7 @@ if (isset($_POST['register'])) {
                     currentImageIndex = (currentImageIndex + 1) % images.length;
                     }
                     changeBackgroundImage();
-                    setInterval(changeBackgroundImage, 15000);
+                    setInterval(changeBackgroundImage, 8000);
                     </script>
                 </div>
                 <div class="col-md-6 right-register">
