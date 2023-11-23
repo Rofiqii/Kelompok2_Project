@@ -5,6 +5,13 @@ $rentalps = isset($_SESSION['rentalps']['username']) ? $_SESSION['rentalps']['us
 $result = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '{$rentalps}'");
 while($row = mysqli_fetch_assoc($result))
 $name = $row['fullname'];
+$query = "SELECT b.id_pemesanan, b.tanggal, b.total_harga AS pendapatan FROM booking b WHERE b.status != 0";
+
+$result = mysqli_query($koneksi, $query);
+
+if (!$result) {
+    die("Gagal mengambil data: " . mysqli_error($koneksi));
+}
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +43,7 @@ $name = $row['fullname'];
             <div class="menu">
                 <li class="search-box">
                     <i class='bx bx-search icon'></i>
-                    <input type="text" placeholder="Search...">
+                    <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search...">
                 </li>
                 <ul class="menu-links">
                 <li class="nav-link">
@@ -92,16 +99,36 @@ $name = $row['fullname'];
         <div class="text logo-text">Laporan Keuangan</div>
         <div class="tabular--wrapper">
         <h1 class="main--title">Tabel Keuangan</h1>
-        <div class="table-container">
+        <div class="table-container-lap-keuangan">
             <table>
                 <thead>
                     <tr>
                         <th class="text-white">ID Pemesanan</th>
-                        <th class="text-white">Total Harga</th>
-                        <th class="text-white">Pengeluaran</th>
-                        <th class="text-white">Pendapatan Bersih</th>
+                        <th class="text-white">Tanggal Pemesanan</th>
+                        <th class="text-white">Pendapatan</th>
                     </tr>
                 </thead>
+                <?php
+                $total_pendapatan = 0;
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr>";
+                    echo "<td>" . $row['id_pemesanan'] . "</td>";
+                    echo "<td>" . $row['tanggal'] . "</td>";
+                    echo "<td>" . $row['pendapatan'] . "</td>";
+                    echo "</tr>";
+                    $total_pendapatan += $row['pendapatan'];
+                }
+                $pendapatan_hari_ini = 'Rp ' . number_format($total_pendapatan, 0, ',', '.');
+                ?>
+            </table>
+        </div>
+        <div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td colspan='2' class='font-pendapatan'><strong>Total Pendapatan :</strong> <?php echo $total_pendapatan; ?></td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </div>
@@ -133,6 +160,29 @@ $name = $row['fullname'];
                 localStorage.setItem("theme", "light");
             }
         });
+    </script>
+    <script>
+        function searchTable() {
+        let input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("searchInput");
+        filter = input.value.toUpperCase();
+        table = document.querySelector("table");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td");
+            for (let j = 0; j < td.length; j++) {
+                if (td[j]) {
+                    txtValue = td[j].textContent || td[j].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                        break;
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    }
     </script>
 </body>
 

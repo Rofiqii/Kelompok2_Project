@@ -140,6 +140,8 @@ while ($row = mysqli_fetch_assoc($result)) {
                                 $status = "DITERIMA";
                             } elseif ($row['status'] == 0) {
                                 $status = "DITOLAK";
+                            } elseif ($row['status'] == 3) {
+                                $status = "SELESAI";
                             } else {
                                 $status = "MENUNGGU KONFIRMASI";
                             }
