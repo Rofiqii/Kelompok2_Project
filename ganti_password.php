@@ -5,22 +5,28 @@ if (isset($_POST['ganti_password'])) {
     $username = mysqli_real_escape_string($koneksi, $_POST['username']);
     $new_password = mysqli_real_escape_string($koneksi, $_POST['new_password']);
     $confirm_password = mysqli_real_escape_string($koneksi, $_POST['confirm_password']);
-    if ($new_password === $confirm_password) {
-        $query = "UPDATE user SET password = ? WHERE username = ?";
-        $stmt = mysqli_prepare($koneksi, $query);
-        mysqli_stmt_bind_param($stmt, "ss", $new_password, $username);
-        if (mysqli_stmt_execute($stmt)) {
-            header("Location: login.php");
-            exit();
+
+    $check_query = "SELECT * FROM user WHERE username = '$username'";
+    $check_result = mysqli_query($koneksi, $check_query);
+    if (mysqli_num_rows($check_result) > 0) { // Jika username valid
+        if ($new_password === $confirm_password) {
+            $query = "UPDATE user SET password = ? WHERE username = ?";
+            $stmt = mysqli_prepare($koneksi, $query);
+            mysqli_stmt_bind_param($stmt, "ss", $new_password, $username);
+            if (mysqli_stmt_execute($stmt)) {
+                header("Location: login.php");
+                exit();
+            } else {
+                $error = "Gagal mengganti kata sandi. Silakan coba lagi.";
+            }
         } else {
-            $error = "Gagal mengganti kata sandi. Silakan coba lagi.";
+            $error = "Konfirmasi kata sandi tidak cocok. Silakan coba lagi.";
         }
     } else {
-        $error = "Konfirmasi kata sandi tidak cocok. Silakan coba lagi.";
+        $error = "Username tidak valid";
     }
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -73,7 +79,7 @@ if (isset($_POST['ganti_password'])) {
                     setInterval(changeBackgroundImage, 8000);
                     </script>
                 </div>
-                <div class="col-md-6 right">
+                <div class="col-md-6 right-ganpass">
                     <form action="" method="post">
                         <br>
                         <div class="texttitle text-center">

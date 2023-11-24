@@ -79,7 +79,7 @@ if (isset($_POST['lupa_password'])) {
                     setInterval(changeBackgroundImage, 8000);
                     </script>
                 </div>
-                    <div class="col-md-6 right">
+                    <div class="col-md-6 right-luppass">
                         <form action="" method="post">
                             <br>
                             <div class="texttitle text-center">
@@ -118,6 +118,7 @@ if (isset($_POST['lupa_password'])) {
                             <div class="text-center mt-3">
                                 <a href="login.php" id="klikdisini">Kembali ke login.</a>
                             </div>
+                            <br>
                         </form>  
                     </div>
                 </div>

@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
         $sql = "INSERT INTO ps (id_ps, tipe_ps, harga) VALUES ('$id_ps', '$tipe_ps', '$harga')";
         if ($koneksi->query($sql)) {
             header('Location: detail_ps.php');
-            exit(); // Pastikan untuk menggunakan exit() setelah header redirect
+            exit();
         } else {
             echo "Error: " . $sql . "<br>" . $koneksi->error;
         }
