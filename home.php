@@ -107,9 +107,9 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <div class="info--card light-blue">
                 <?php
                 $servername = "localhost";
-                $username = "root";
-                $password = "";
-                $database = "rentalps";
+                $username = "rentalpo_rentalpo";
+                $password = "Celanakotak54321";
+                $database = "rentalpo_rentalps";
                 $conn = mysqli_connect($servername, $username, $password, $database);
                 if ($conn->connect_error) {
                     die("Koneksi gagal: " . $conn->connect_error);
@@ -138,9 +138,9 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <div class="info--card light-green">
                     <?php
                     $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $database = "rentalps";
+                    $username = "rentalpo_rentalpo";
+                    $password = "Celanakotak54321";
+                    $database = "rentalpo_rentalps";
                     $conn = mysqli_connect($servername, $username, $password, $database);
                     if (!$conn) {
                         die("Koneksi gagal: " . mysqli_connect_error());
@@ -163,9 +163,9 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <div class="info--card light-yellow">
                     <?php
                     $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $database = "rentalps";
+                    $username = "rentalpo_rentalpo";
+                    $password = "Celanakotak54321";
+                    $database = "rentalpo_rentalps";
                     $conn = mysqli_connect($servername, $username, $password, $database);
                     if (!$conn) {
                         die("Koneksi gagal: " . mysqli_connect_error());
@@ -205,9 +205,9 @@ while ($row = mysqli_fetch_assoc($result)) {
                             <tbody>
                                 <?php
                                 $servername = "localhost";
-                                $username = "root";
-                                $password = "";
-                                $database = "rentalps";
+                                $username = "rentalpo_rentalpo";
+                                $password = "Celanakotak54321";
+                                $database = "rentalpo_rentalps";
                                 $conn = mysqli_connect($servername, $username, $password, $database);
                                 if ($conn->connect_error) {
                                     die("Koneksi gagal: " . $conn->connect_error);
