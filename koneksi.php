@@ -1,9 +1,9 @@
 <?php
 
-$host = '127.0.0.1';
-$user = 'root';
-$pass = '';
-$db = 'rentalps';
+$host = 'localhost';
+$user = 'rentalpo_rentalpo';
+$pass = 'Celanakotak54321';
+$db = 'rentalpo_rentalps';
 $port = '3306';
 
 $koneksi = mysqli_connect($host, $user, $pass, $db, $port);

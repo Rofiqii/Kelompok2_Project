@@ -15,6 +15,10 @@ if (isset($_POST['submit'])) {
 }
 
 $id_ps_to_edit = isset($_GET['id']) ? $_GET['id'] : null;
+if ($id_ps_to_edit === null) {
+    header('Location: detail_ps.php');
+    exit();
+}
 $sql = "SELECT id_ps, tipe_ps, harga FROM ps WHERE id_ps = '$id_ps_to_edit'";
 $result = $koneksi->query($sql);
 $row = $result->fetch_assoc();

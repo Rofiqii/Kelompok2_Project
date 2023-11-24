@@ -47,7 +47,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             <div class="menu">
                 <li class="search-box">
                     <i class='bx bx-search icon'></i>
-                    <input type="text" placeholder="Search...">
+                    <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search...">
                 </li>
                 <ul class="menu-links">
                 <li class="nav-link">
@@ -213,8 +213,15 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     die("Koneksi gagal: " . $conn->connect_error);
                                 }
                                 $sql = "SELECT ps.ID_PS, ps.Tipe_PS, booking.waktu_awal, booking.waktu_akhir, booking.status
-                                        FROM ps 
-                                        LEFT JOIN booking ON ps.ID_PS = booking.ID_PS";
+                                    FROM ps 
+                                    LEFT JOIN booking ON ps.ID_PS = booking.ID_PS
+                                    WHERE (booking.id_pemesanan IS NULL 
+                                          OR booking.id_pemesanan = (
+                                              SELECT MAX(id_pemesanan)
+                                              FROM booking b
+                                              WHERE b.ID_PS = ps.ID_PS
+                                              )
+                                          )";
                                 $result = $conn->query($sql);
                                 if ($result->num_rows > 0) {
                                     while ($row = $result->fetch_assoc()) {
@@ -296,6 +303,30 @@ while ($row = mysqli_fetch_assoc($result)) {
                 localStorage.setItem("theme", "light");
             }
         });
+    </script>
+    <script>
+        function searchTable() {
+        let input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("searchInput");
+        filter = input.value.toUpperCase();
+        table = document.querySelector("table");
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td");
+            for (let j = 0; j < td.length; j++) {
+                if (td[j]) {
+                    txtValue = td[j].textContent || td[j].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                        break;
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    }
     </script>
     <script>
     function updateStatus() {

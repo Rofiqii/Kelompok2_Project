@@ -12,12 +12,11 @@ if (isset($_POST['submit'])) {
     $check_result = $koneksi->query($check_sql);
     if ($check_result->num_rows > 0) {
         echo '<script>alert("ID sudah ada. Silakan gunakan ID yang berbeda.")</script>';
-        header('Refresh:0;');
     } else {
         $sql = "INSERT INTO ps (id_ps, tipe_ps, harga) VALUES ('$id_ps', '$tipe_ps', '$harga')";
         if ($koneksi->query($sql)) {
-            echo '<script>alert("Data berhasil disimpan.")</script>';
-            header('Refresh:0;');
+            header('Location: detail_ps.php');
+            exit(); // Pastikan untuk menggunakan exit() setelah header redirect
         } else {
             echo "Error: " . $sql . "<br>" . $koneksi->error;
         }
