@@ -154,7 +154,7 @@ if (isset($_POST['submit'])) {
                             echo "<td>" . $row["id_ps"] . "</td>";
                             echo "<td>" . $row["tipe_ps"] . "</td>";
                             echo "<td>" . $row["harga"] . "</td>";
-                            echo "<td><a href='hapus_ps.php?id=" . $row['id_ps'] . "' class='btn-delete' onclick='konfirmasiHapus()'></a></td>";
+                            echo "<td><a href='#' class='btn-delete' onclick='konfirmasiHapus(" . $row['id_ps'] . ")'></a></td>";
                             echo "<td><a href='edit_ps.php?id=" . $row['id_ps'] . "' class='btn-edit'></a></td>";
                             echo "</tr>";
                         }
@@ -189,10 +189,18 @@ if (isset($_POST['submit'])) {
             popup.style.left = (window.scrollX + window.innerWidth / 2) + "px";
             }
 
-            function konfirmasiHapus() {
+            function konfirmasiHapus(id_ps) {
         if (confirm("Apakah Anda yakin ingin menghapus data ini?")) {
-            window.location.href = 'hapus_ps.php?id=' + id_ps;
-        } else {
+            fetch(`cek_status_pemesanan.php?id=${id_ps}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'gagal') {
+                        alert("Data tidak dapat dihapus karena memiliki pemesanan yang sudah diproses.");
+                    } else {
+                        window.location.href = `hapus_ps.php?id=${id_ps}`;
+                    }
+                })
+                .catch(error => console.error('Error:', error));
         }
     }
     </script>
