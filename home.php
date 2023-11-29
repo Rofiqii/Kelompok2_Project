@@ -197,7 +197,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                     <th class="text-white">ID PS</th>
                                     <th class="text-white">Tipe PS</th>
                                     <th class="text-white">Jam mulai</th>
-                                    <th class="text-white">Jam berakhir</th>
+                                    <th class="text-white">Jam selesai</th>
                                     <th class="text-white">Status</th>
                                     <th class="text-white">Aksi</th>
                                 </tr>
@@ -255,7 +255,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                         echo "</td>";
                                         echo "<td>";
                                         if ($row["status"] == 1) {
-                                            echo "<a href='cancel_booking.php?ID_PS=" . $row["ID_PS"] . "'>Cancel</a>";
+                                            echo "<a href='cancel_booking.php?ID_PS=" . $row["ID_PS"] . "'>Selesai</a>";
                                         } elseif ($row["status"] === null || $row["status"] == 0) {
                                             echo "";
                                         } else {
