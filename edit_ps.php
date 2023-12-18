@@ -50,7 +50,7 @@ $row = $result->fetch_assoc();
                         <input type="text" name="tipe_ps" class="form-input" value="<?php echo $row['tipe_ps']; ?>" required>
                         <br>
                         <label for="harga" id="text2">Harga Per Jam :</label>
-                        <input type="text" name="harga" class="form-input" value="<?php echo $row['harga']; ?>" required>
+                        <input type="text" name="harga" class="form-input" value="<?php echo $row['harga']; ?>" required min="1000">
                         <br>
                         <br>
                         <div class="d-flex justify-content-center">

@@ -5,7 +5,6 @@ $sql = "SELECT id_ps, tipe_ps, harga FROM ps";
 $result = $koneksi->query($sql);
 
 if (isset($_POST['submit'])) {
-    $id_ps = $_POST['id_ps'];
     $tipe_ps = $_POST['tipe_ps'];
     $harga = $_POST['harga'];
     $check_sql = "SELECT id_ps FROM ps WHERE id_ps = '$id_ps'";
@@ -13,7 +12,7 @@ if (isset($_POST['submit'])) {
     if ($check_result->num_rows > 0) {
         echo '<script>alert("ID sudah ada. Silakan gunakan ID yang berbeda.")</script>';
     } else {
-        $sql = "INSERT INTO ps (id_ps, tipe_ps, harga) VALUES ('$id_ps', '$tipe_ps', '$harga')";
+        $sql = "INSERT INTO ps (tipe_ps, harga) VALUES ('$tipe_ps', '$harga')";
         if ($koneksi->query($sql)) {
             header('Location: detail_ps.php');
             exit();
@@ -88,6 +87,12 @@ if (isset($_POST['submit'])) {
                     <i class='bx bx-user-circle icon'></i>
                     <span class="text logo-text profession"><?php echo isset($_SESSION['fullname']) ? $_SESSION['fullname'] : 'Nama Profile'; ?></span>
                 </li>
+                <li class="nav-link">
+                    <a href="register.php" id="klikdisini" class="navbar-brand">
+                        <i class='bx bx-user-plus icon'></i>
+                        <span class="text nav-text">Daftar Admin Baru</span>
+                    </a>
+                </li>
                 <li class="" href="login.php" onclick="confirmLogout(event)">
                     <a href="#">
                         <i class='bx bx-log-out icon'></i>
@@ -115,8 +120,6 @@ if (isset($_POST['submit'])) {
             <h3 id="text2">Formulir Penambahan Data PS</h3>
             <br>
                 <form action="" method="POST">
-                    <label for="id_ps" id="text2">ID PS : </label>
-                    <input type="text" name="id_ps" class="form-input" placeholder="Isi dengan angka" required><br>
                     <label for="tipe_ps" id="text2">Tipe PS : </label>
                     <select name="tipe_ps" class="form-input" required>
                         <option value="PS1">PS1</option>
@@ -126,7 +129,7 @@ if (isset($_POST['submit'])) {
                         <option value="PS5">PS5</option>
                     </select><br>
                     <label for="harga" id="text2">Harga Per Jam : </label>
-                    <input type="text" name="harga" class="form-input" placeholder="Isi tanpa Rp" required>
+                    <input type="number" name="harga" class="form-input" placeholder="Isi tanpa Rp (diatas 1000)" required min="1000">
                     <br>
                     <br>
                     <button type="button" onclick="closePopup()">Kembali</button>

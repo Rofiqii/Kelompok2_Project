@@ -18,6 +18,7 @@ if(isset($_POST['login'])) {
                 $_SESSION['rentalps'] = $rentalps;
                 $_SESSION['username'] = $rentalps['username'];
                 $_SESSION['fullname'] = $rentalps['fullname'];
+                mysqli_query($koneksi, "INSERT INTO kasir VALUES('', '". $rentalps['username'] ."')");
                 header('Location: home.php');
             } else {
                 $error = "Username atau password salah";
@@ -108,7 +109,7 @@ if(isset($_POST['login'])) {
                             <button type="submit" name="login" class="btn" id="btn-login">Login</button>
                         </div>
                         <div class="text-center mt-3">
-                            <p id="text2">Belum punya akun? <a href="register.php" id="klikdisini">Daftar disini.</a></p>
+                            <p id="text2">Belum punya akun? Harap konfirmasi pada admin.</a></p>
                             <p id="text2">Atau <a href="lupa_password.php" id="klikdisini">Lupa Password?</a></p>
                         </div>
                     </form>

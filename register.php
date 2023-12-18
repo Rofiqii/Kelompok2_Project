@@ -19,7 +19,7 @@ if (isset($_POST['register'])) {
         $result = mysqli_query($koneksi, $query);
         
         if ($result) {
-            header('Location: login.php');
+            header('Location: home.php');
         } else {
             $error = "Gagal menambahkan pengguna. Silakan coba lagi.";
         }
@@ -135,7 +135,7 @@ if (isset($_POST['register'])) {
                             <button type="submit" name="register" class="btn" id="btn-register">Register</button>
                         </div>
                         <div class="text-center mt-3">
-                            <p id="text2">Sudah punya akun? <a href="login.php" id="klikdisini">Login disini.</a></p>
+                            <p><a href="home.php" id="klikdisini">Kembali</a></p>
                         </div>
                         <br>
                     </form>

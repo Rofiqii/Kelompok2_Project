@@ -72,6 +72,12 @@ while ($row = mysqli_fetch_assoc($result)) {
                     <i class='bx bx-user-circle icon'></i>
                     <span class="text logo-text profession"><?php echo isset($_SESSION['fullname']) ? $_SESSION['fullname'] : 'Nama Profile'; ?></span>
                 </li>
+                <li class="nav-link">
+                    <a href="register.php" id="klikdisini" class="navbar-brand">
+                        <i class='bx bx-user-plus icon'></i>
+                        <span class="text nav-text">Daftar Admin Baru</span>
+                    </a>
+                </li>
                 <li class="" href="login.php" onclick="confirmLogout(event)">
                     <a href="#">
                         <i class='bx bx-log-out icon'></i>
